@@ -11,7 +11,7 @@ class BikesController < ApplicationController
   def new
     @bike = Bike.new
   end
-    
+  
   def create
     @bike = Bike.new(bike_params)
     if @bike.save
@@ -49,3 +49,4 @@ class BikesController < ApplicationController
     params.require(:bike).permit(:title, :description, :price, :location)
   end
 end
+
