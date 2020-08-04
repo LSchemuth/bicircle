@@ -6,6 +6,7 @@
   <%= f.input :price %>
   <%= f.input :location %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit "Add this bike", class: "btn btn-primary" %>
+  <%= f.submit "Add this bike", class: "btn btn-primary mr-2" %>
+  <%= link_to "Cancel", bikes_path %>
 <% end %>
 </div>
