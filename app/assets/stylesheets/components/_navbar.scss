@@ -8,5 +8,14 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
 }
+
+.navbar-lewagon .add-btn {
+  border-radius: 25px;
+  background-color: white;
+  border: 1px $warning solid;
+    .nav-item {
+      color: $warning;
+    }
+ }
