@@ -1,7 +1,7 @@
   <div class="container container-main">
     <div class="cards">
       <% @bikes.each do |bike| %>
-        <%= link_to bike_path(bike) do %>
+        <%= link_to bike_path(bike), "data-toggle" => "modal", 'data-target' => '#exampleModal' do %>
         <div class="card-bike">
           <% if bike.photo.attached? %>
             <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill %>
@@ -19,7 +19,34 @@
           </div>
         </div>
          <% end %>
+         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="container d-flex card mt-3">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= bike.title %></h5>
+                  </div>
+                  <img class="card-img-top" src="..." alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text"><%= bike.description %></p>
+                  </div>
+                  <div class="card mb-3 w-25 text-right ml-auto">
+                    <div class="card-body ">
+                      <h5 class="card-title"><%= bike.price %> / day</h5>
+                      <p>Booking dates.</p>
+                    </div>
+                  <a href="#" class="btn btn-primary">Book me now!</a>
+                  </div>
+                </div>
+                <%= link_to "Delete", bike_path(bike), class: "btn btn-danger btn-xs", method: :delete  %>
+                </div>
+              </div>
+            </div>
+          </div>
       <% end %>
     </div>
   </div>
 </div>
+
+
