@@ -10,9 +10,15 @@
     top: 10px;
     padding: 0 8px;
     color: #656565;
+    z-index: 1;
+  }
+  .ap-input-icon{
+    display: none;
   }
 }
 
 .form-control {
   color: #656565;  
 }
+
+ 
