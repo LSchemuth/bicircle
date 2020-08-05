@@ -39,7 +39,7 @@
     p {
       font-size: 12px;
       opacity: .7;
-      margin: 0;  
+      margin: 0;
     }
     .card-bike-infos {
       padding: 16px;
@@ -53,21 +53,26 @@
       right: 16px;
       top: -25px;
       width: 90px;
-      height: 50px;
+      height: 45px;
       padding: 10px;
       background: white;
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
   }
-  
+
   .card-bike > img {
     height: 200px;
     width: 100%;
     object-fit: cover;
   }
-  
+
   .card-bike-pricing h2 {
       vertical-align: middle;
       display: inline-block;
   }
+
+
+
+
+
