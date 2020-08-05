@@ -2,7 +2,16 @@ class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bikes = Bike.all
+    @bikes = Bike.geocoded # returns flats with coordinates
+
+    @markers = @bikes.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike }),
+        image_url: helpers.asset_url('bike_marker.png')
+      }
+    end
   end
 
   def my_bikes
@@ -27,7 +36,7 @@ class BikesController < ApplicationController
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save
-      redirect_to @bike, notice: 'bike was successfully created.'
+      redirect_to bikes_path, notice: 'bike was successfully created.'
     else
       render :new
     end
@@ -58,7 +67,7 @@ class BikesController < ApplicationController
 
 
   def bike_params
-    params.require(:bike).permit(:title, :description, :price, :location, :photo)
+    params.require(:bike).permit(:title, :description, :price, :address, photos: [])
   end
 end
 
