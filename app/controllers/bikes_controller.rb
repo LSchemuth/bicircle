@@ -27,7 +27,7 @@ class BikesController < ApplicationController
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save
-      redirect_to @bike, notice: 'bike was successfully created.'
+      redirect_to bikes_path, notice: 'bike was successfully created.'
     else
       render :new
     end
@@ -58,7 +58,7 @@ class BikesController < ApplicationController
 
 
   def bike_params
-    params.require(:bike).permit(:title, :description, :price, :location, :photo)
+    params.require(:bike).permit(:title, :description, :price, :location, photos: [])
   end
 end
 
