@@ -5,6 +5,17 @@ class BikesController < ApplicationController
     @bikes = Bike.all
   end
 
+  def my_bikes
+    @bikes = Bike.all
+    @my_bikes = []
+    @bikes.each do |bike|
+      if bike.user == current_user
+        @my_bikes << bike
+      end
+    end
+    return @my_bikes
+  end
+
   def show
   end
 
