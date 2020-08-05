@@ -60,26 +60,34 @@
 
                 <div class="container d-flex card mt-3">
                   <div class="card-body">
-                    <div class="content-wrapper">
-                      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
+                    <div class="row">
+                      <div class="col-8">
+                        <div class="content-wrapper">
+                          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
+                        </div>
+                        <div class="content-wrapper">
+                          <h5><strong>Description</strong></h5>
+                          <p class="card-text"><%= bike.description %></p>
+                        </div>
+                        <div class="content-wrapper">
+                          <h5><strong>Reviews</strong></h5>
+                          <p>Some nice reviews</p>
+                        </div>
+                      </div>
+
+                      <div class="col-4">
+                        <div class="card mb-3 w-40 text-left ml-auto">
+                          <div class="card-body ">
+                            <h5 class="card-title"><%= bike.price %>€ / day</h5>
+                            <label class="sr-only" for="inline-date">Start-Date</label>
+                            <input type="date" class="form-control" id="inline-date" required>
+                            <label class="sr-only" for="inline-date">Start-Date</label>
+                            <input type="date" class="form-control" id="inline-date" required>                    </div>
+                          <a href="#" class="btn btn-primary">Book me now!</a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="content-wrapper">
-                      <h5><strong>Description</strong></h5>
-                      <p class="card-text"><%= bike.description %></p>
-                    </div>
-
-                    <div class="card mb-3 w-40 text-right ml-auto">
-                      <div class="card-body ">
-                        <h5 class="card-title"><%= bike.price %> / day</h5>
-                        <label class="sr-only" for="inline-date">Start-Date</label>
-                        <input type="date" class="form-control" id="inline-date" required>
-                        <label class="sr-only" for="inline-date">Start-Date</label>
-                        <input type="date" class="form-control" id="inline-date" required>                    </div>
-                      <a href="#" class="btn btn-primary">Book me now!</a>
                   </div>
-
-                  </div>
-
                 </div>
                 </div>
               </div>
