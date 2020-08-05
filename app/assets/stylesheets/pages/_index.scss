@@ -1,2 +1,35 @@
 // Import page-specific CSS files here.
 @import "home";
+
+// Show Modal
+.modal-body {
+    padding: 0 50px;
+}
+
+.carousel-item {
+  img {
+    width: 100%;
+    // object-fit: cover;
+
+      
+    @media (min-width: 576px) {
+      height: 400px;
+    }
+  }
+}
+
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+}
+
+.content-wrapper {
+  width: 70%;
+  border-bottom: 1px solid #656565;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.card-owner {
+  width: 40px;
+}
