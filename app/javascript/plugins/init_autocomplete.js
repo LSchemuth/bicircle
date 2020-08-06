@@ -12,5 +12,8 @@ const initPagesAutocomplete = () => {
     places({ container: pagesAddressInput });
   }
 };
+const reconfigurableOptions = {
+  language: 'de'
+};
 
 export { initAutocomplete, initPagesAutocomplete };
