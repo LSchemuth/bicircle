@@ -55,7 +55,7 @@ class BikesController < ApplicationController
 
   def destroy
     @bike.destroy
-    redirect_to bikes_url, notice: 'bike was successfully deleted.'
+    redirect_to bikes_my_bikes_url, notice: 'bike was successfully deleted.'
   end
 
 
