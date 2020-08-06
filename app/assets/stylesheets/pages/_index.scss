@@ -4,6 +4,13 @@
   padding: 0;
 }
 
+.row {
+  width: 100%;
+}
+
+.column {
+  width: 50%;
+}
 // Show Modal
 .modal-body {
     padding: 0 50px;
@@ -42,5 +49,6 @@
 	position: sticky;
   top: 0px;
   margin-top: 67px;
-  width: 70%;
+  margin-left: 30px;
+  width: 100%;
 }

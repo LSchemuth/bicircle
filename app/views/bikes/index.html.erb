@@ -1,6 +1,6 @@
 <div class="container container-main">
   <div class="row">
-    <div class="col-12 cards-wrapper">
+    <div class="column">
       <div class="cards">
         <% n = 0  %>
         <% @bikes.each do |bike| %>
@@ -90,12 +90,14 @@
         <% end %>
       </div>
   </div>
-  </div>
+  <div class="column">
       <div id="map"
          style="height: 600px;"
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
+  </div>
+  </div>
 </div>
 
 
