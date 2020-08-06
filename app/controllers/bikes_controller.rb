@@ -48,7 +48,7 @@ class BikesController < ApplicationController
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save
-      redirect_to bikes_path, notice: 'bike was successfully created.'
+      redirect_to bikes_path, notice: 'Bike was successfully created.'
     else
       render :new
     end
@@ -59,7 +59,7 @@ class BikesController < ApplicationController
 
   def update
     if @bike.update(bike_params)
-      redirect_to @bike, notice: 'bike was successfully updated.'
+      redirect_to @bike, notice: 'Bike was successfully updated.'
     else
       render :edit
     end
@@ -67,7 +67,7 @@ class BikesController < ApplicationController
 
   def destroy
     @bike.destroy
-    redirect_to bikes_my_bikes_url, notice: 'bike was successfully deleted.'
+    redirect_to bikes_my_bikes_url, notice: 'Bike was successfully deleted.'
   end
 
 
