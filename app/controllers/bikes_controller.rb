@@ -59,7 +59,7 @@ class BikesController < ApplicationController
 
   def update
     if @bike.update(bike_params)
-      redirect_to @bike, notice: 'Bike was successfully updated.'
+      redirect_to bikes_my_bikes_path, notice: 'Bike was successfully updated.'
     else
       render :edit
     end
