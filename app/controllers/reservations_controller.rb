@@ -8,19 +8,32 @@ class ReservationsController < ApplicationController
     set_reservation
   end
 
+  def my_reservations
+    @reservations = Reservation.all
+    @my_reservations = []
+    @reservations.each do |reservation|
+      if reservation.user == current_user
+        @my_reservations << reservation
+      end
+    end
+    return @my_reservations
+  end
+
   def new
     @reservation = Reservation.new
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.user = current_user
+    @bike = Bike.find(params[:bike_id])
+    @reservation.bike = @bike
     if @reservation.save
-      redirect_to reservation_path(@reservation)
+      redirect_to my_reservations_reservations_path, notice: 'Reservation was made'
     else
-      render "new"
+      render "new", notice: 'Oops... this reservation failed'
     end
   end
-
 
   def edit
     set_reservation

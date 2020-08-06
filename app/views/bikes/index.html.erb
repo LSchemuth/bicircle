@@ -1,4 +1,5 @@
 <div class="container container-main">
+  <% @reservation = Reservation.new %>
   <div class="row">
     <div class="column">
       <div class="cards">
@@ -77,11 +78,21 @@
                           <div class="card mb-3 w-40 text-left ml-auto">
                             <div class="card-body ">
                               <h5 class="card-title"><%= bike.price %>€ / day</h5>
-                              <label class="sr-only" for="inline-date">Start-Date</label>
-                              <input type="date" class="form-control" id="inline-date" required>
-                              <label class="sr-only" for="inline-date">Start-Date</label>
-                              <input type="date" class="form-control" id="inline-date" required>                    </div>
-                            <a href="#" class="btn btn-primary">Book me now!</a>
+                              <!-- <form class="new_reservation" id="new_reservation" action="<%= %>" accept-charset="UTF-8" method="post">
+                                <label class="sr-only" for="reservation_start_date">Start-Date</label>
+                                <input type="date" name="reservation[start_date]" class="form-control" id="reservation_start_date" required>
+                                <label class="sr-only" for="reservation_end_date">End-Date</label>
+                                <input type="date" name="reservation[end_date]" class="form-control" id="reservation_start_date" required>
+                                <input type="submit" name="commit" value="Create Reservation" data-disable-with="Create Reservation">
+                              </form> -->
+                              <%= simple_form_for [ bike, @reservation] do |f| %>
+                                <%= f.label :start_date %>
+                                <%= f.datetime_field :start_date %>
+                                <%= f.label :end_date %>
+                                <%= f.datetime_field :end_date %>
+                                <%= f.submit "Book me now", class: "btn btn-primary"%>
+                              <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -100,7 +111,7 @@
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-  </div>
+    </div>
   </div>
 </div>
 

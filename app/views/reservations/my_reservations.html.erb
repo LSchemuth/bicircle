@@ -1,0 +1,9 @@
+<div class="container">
+  <% @reservations.each do |reservation| %>
+    <h2><%= reservation.start_date %></h2>
+    <h2><%= reservation.end_date %></h2>
+    <p><%= reservation.user.email %></p>
+    <p><%= reservation.bike.title %></p>
+    <p><%= reservation.bike.address %></p>
+  <% end %>
+</div>
