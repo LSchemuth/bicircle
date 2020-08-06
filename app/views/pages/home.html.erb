@@ -1,6 +1,41 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
   <div class="container">
-    <form class="form-inline needs-validation" novalidate>
+
+    <%= form_tag bikes_path, class: "form-inline needs-validation", novalidate: true, method: :get do %>
+    <label class="sr-only" for="inline-location">Location</label>
+    <div class="location-with-icon" id="inline-content">
+      <i class="fas fa-map-marker-alt"></i>
+      <%= text_field_tag :location, params[:location], class: "form-control mb-5 mr-sm-2 location-input", placeholder: "Please enter a location", id: "pages_bike_address" %>
+    </div>
+    <div class="invalid-feedback">Location can't be blank</div>
+    <div class="valid-feedback">Looks good!</div>
+    
+    <label class="sr-only" for="inline-date">Start-Date</label>
+    <input type="date" class="form-control mb-5 " id="inline-date" required>
+    <div class="invalid-feedback">Please provide a valid value.</div>
+    <div class="valid-feedback">Looks good!</div>
+
+    <label class="sr-only" for="inline-time">Start-Time</label>
+    <input type="time" class="form-control mb-5 mr-sm-2" id="inline-time" required>
+    <div class="invalid-feedback">Please provide a valid value.</div>
+    <div class="valid-feedback">Looks good!</div>
+
+    <label class="sr-only" for="inline-date">End-Date</label>
+    <input type="date" class="form-control mb-5" id="inline-date" required>
+    <div class="invalid-feedback">Please provide a valid value.</div>
+    <div class="valid-feedback">Looks good!</div>
+
+    <label class="sr-only" for="inline-time">End-Time</label>
+    <input type="time" class="form-control mb-5 mr-sm-2" id="inline-time" required>
+    <div class="invalid-feedback">Please provide a valid value.</div>
+    <div class="valid-feedback">Looks good!</div>
+
+    <%= submit_tag "Let's Go!", class: "btn btn-primary mb-5 mr-sm-2 btn-home" %>
+    <% end %>
+
+    
+ 
+    <%# <form class="form-inline needs-validation" novalidate>
     <label class="sr-only" for="inline-location">Location</label>
     <div class="location-with-icon" id="inline-content">
       <i class="fas fa-map-marker-alt"></i>
@@ -29,8 +64,8 @@
     <div class="invalid-feedback">Please provide a valid value.</div>
     <div class="valid-feedback">Looks good!</div>
 
-    <button type="button" class="btn btn-primary mb-5 mr-sm-2 btn-home"><%= link_to "Let's Go!", bikes_path %></button>
-    </form>
+    <button type="button" class="btn btn-primary mb-5 mr-sm-2 btn-home"><%= link_to "Let's Go!", bikes_path</button> %>
+    <%# </form> %>
 
     <h1>Get out and explore with <strong style="color: #010059;">BikeNow</strong></h1>
     <p>Enjoy time alone or with your friends while cruising through unknown worlds!</p>
