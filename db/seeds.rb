@@ -73,7 +73,7 @@ user = User.all.first
       bike.photos.attach(io: file, filename: bike.title, content_type: 'image/jpg')
     end
 
-    bike = Bike.create(title: 'Carbon KTM Lycan Elite 27,5', description: 'The perfect bike for a trip to the Mountains', price: 22, address: 'Kaufingerstraße 8 Munich', user: user)
+    bike = Bike.create(title: 'Carbon KTM Lycan Elite', description: 'The perfect bike for a trip to the Mountains', price: 22, address: 'Kaufingerstraße 8 Munich', user: user)
     images = ['https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710088/_59_17_mndmlw.jpg', 'https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710088/_59_18_jsnrut.jpg']
     images.each do |image|
       file = URI.open(image)
