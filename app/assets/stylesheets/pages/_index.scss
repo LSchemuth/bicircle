@@ -1,5 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
+.container-main {
+  padding: 0;
+}
 
 // Show Modal
 .modal-body {
@@ -32,4 +35,12 @@
 
 .card-owner {
   width: 40px;
+}
+
+#map {
+	height: 100vh;
+	position: sticky;
+  top: 0px;
+  margin-top: 67px;
+  width: 70%;
 }
