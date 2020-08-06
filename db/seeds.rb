@@ -17,7 +17,7 @@ user = User.all.first
      bike.photos.attach(io: file, filename: bike.title, content_type: 'image/jpg')
    end
 
-    bike = Bike.create!(title: '30 years old Woman Racing Bike', description: 'I use this bike already many years but it still works really well.', price: 10, address: 'Harthauserstraße 5 Munich', user: user)
+    bike = Bike.create!(title: '30 years old Racing Bike', description: 'I use this bike already many years but it still works really well.', price: 10, address: 'Harthauserstraße 5 Munich', user: user)
     images = ['https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710086/_59_2_t5ryvt.jpg', 'https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710086/_59_3_pya4yp.jpg']
     images.each do |image|
       file = URI.open(image)
@@ -38,7 +38,7 @@ user = User.all.first
       bike.photos.attach(io: file, filename: bike.title, content_type: 'image/jpg')
     end
 
-    bike = Bike.create(title: 'Cervelo P2C Carbon Triathlon Bike Size 56', description: 'Bike in really good condition.', price: 10, address: 'Türkenstraße 78 Munich', user: user)
+    bike = Bike.create(title: 'Cervelo P2C Carbon Triathlon', description: 'Bike in really good condition.', price: 10, address: 'Türkenstraße 78 Munich', user: user)
     images = ['https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710087/_59_8_zn3gyx.jpg', 'https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710087/_59_9_micpjn.jpg']
     images.each do |image|
       file = URI.open(image)
@@ -66,14 +66,14 @@ user = User.all.first
       bike.photos.attach(io: file, filename: bike.title, content_type: 'image/jpg')
     end
 
-    bike = Bike.create(title: 'FELT NAVY Beach Cruiser Retro Vintage Bike', description: 'You wanna look cool on a bike rent this one!', price: 14, address: 'Danzigerstraße 2 Munich', user: user)
+    bike = Bike.create(title: 'Beach Cruiser Vintage Bike', description: 'You wanna look cool on a bike rent this one!', price: 14, address: 'Danzigerstraße 2 Munich', user: user)
     images = ['https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710088/_59_16_rhfkgc.jpg', 'https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710088/_59_15_di3mu2.jpg']
     images.each do |image|
       file = URI.open(image)
       bike.photos.attach(io: file, filename: bike.title, content_type: 'image/jpg')
     end
 
-    bike = Bike.create(title: 'Carbon KTM Lycan Elite 27,5“, Shimano XT, RockShox', description: 'The perfect bike for a trip to the Mountains', price: 22, address: 'Kaufingerstraße 8 Munich', user: user)
+    bike = Bike.create(title: 'Carbon KTM Lycan Elite 27,5', description: 'The perfect bike for a trip to the Mountains', price: 22, address: 'Kaufingerstraße 8 Munich', user: user)
     images = ['https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710088/_59_17_mndmlw.jpg', 'https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710088/_59_18_jsnrut.jpg']
     images.each do |image|
       file = URI.open(image)
