@@ -36,7 +36,11 @@
                   <div id="carouselExampleControls" class="carousel slide" data-interval="false">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                          <%= cl_image_tag bike.photos.first.key, height: 300, width: 400, crop: :fill, class: "d-block w-100" %>
+                          <% unless bike.photos.first.nil? %>
+                            <%= cl_image_tag bike.photos.first.key, height: 300, width: 400, crop: :fill %>
+                          <% else %>
+                            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+                          <% end %>
                         </div>
                       <% bike.photos.drop(1).each do |photo| %>
                         <div class="carousel-item">
