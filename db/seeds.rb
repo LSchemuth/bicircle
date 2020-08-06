@@ -80,7 +80,7 @@ user = User.all.first
       bike.photos.attach(io: file, filename: bike.title, content_type: 'image/jpg')
     end
 
-    bike = Bike.create(title: 'Dutchbike POPAL', description: 'Perfect for a little city cruise.', price: 19, address: 'Schellingstraße 134 Munich', user: user)
+    bike = Bike.create(title: 'Dutchbike POPAL', description: 'Perfect for a little city cruise.', price: 19, address: 'Alexanderplatz 1 Berlin', user: user)
     images = ['https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710089/_59_19_y6hnay.jpg', 'https://res.cloudinary.com/dovh6vnvn/image/upload/v1596710089/_59_20_fwqaof.jpg']
     images.each do |image|
       file = URI.open(image)
