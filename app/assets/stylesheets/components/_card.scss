@@ -77,6 +77,32 @@
   }
 
 
+// MyBike page
 
+.cards-my-bike {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 32px;
+	flex-grow: 1;
+    padding: 16px;
+    margin-top: 50px;
+    a {
+        text-decoration: none;
+    }
+}
 
+@media(max-width: 992px) {
+  .cards-my-bike {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
+@media(max-width: 768px) {
+  .cards-my-bike {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-my-bike a img {
+  width: 100%;
+}

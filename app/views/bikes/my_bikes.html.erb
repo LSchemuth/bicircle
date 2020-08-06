@@ -1,8 +1,8 @@
 <div class="container container-main">
-    <div class="cards">
+    <div class="cards-my-bike">
       <% @my_bikes.each do |bike| %>
-        <div class="card-bike">
-        <%= link_to bike_path(bike) do %>
+        <div class="card-bike card-my-bike">
+        <%= link_to edit_bike_path(bike) do %>
           <% unless bike.photos.first.nil? %>
             <%= cl_image_tag bike.photos.first.key, height: 200, width: 400, crop: :fill %>
           <% else %>
@@ -12,8 +12,7 @@
           <div class="card-bike-infos">
             <div>
               <h2><%= bike.title %></h2>
-              <p><%= bike.description %></p>
-            </div>
+              <p><i class="fas fa-star"></i><i class="fas fa-star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></i> (<%= rand(8...78) %>)</p>            </div>
             <div class="card-bike-pricing textContainer">
               <h2>€<%= bike.price %> / day</h2>
             </div>
@@ -25,7 +24,7 @@
 
         </div>
       <% end %>
-  <%= link_to "Back to see all bikes", bikes_path %>
+  <%= link_to "Back to Homepage", root_path %>
   </div>
 </div>
 
