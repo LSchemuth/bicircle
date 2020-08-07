@@ -1,5 +1,6 @@
 class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
+  add_flash_types :info, :error, :warning
 
   def index
 
@@ -48,7 +49,7 @@ class BikesController < ApplicationController
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save
-      redirect_to bikes_path, notice: 'Bike was successfully created.'
+      redirect_to bikes_my_bikes_path, notice: 'Bike was successfully created.'
     else
       render :new
     end
