@@ -9,7 +9,7 @@
         <%= f.input :address %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Add this bike", class: "btn btn-primary" %>
-        <%= link_to "Cancel", bikes_path %>
+        <%= link_to "Cancel", bikes_my_bikes_path %>
       <% end %>
     </div>
     <div class="col-7">
