@@ -58,10 +58,10 @@
                       <span class="sr-only">Next</span>
                     </a>
                   </div>
-                  <div class="container d-flex card mt-3 mb-3">
-                    <div class="card-body">
+                  <div class="container d-flex card mt-3 mb-3" style="padding: 0">
+                    <div class="card-body" style="padding-right: 0">
                       <div class="row">
-                        <div class="col-8">
+                        <div class="col-7">
                           <div class="content-wrapper">
                             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
                           </div>
@@ -74,7 +74,7 @@
                             <p>Some nice reviews</p>
                           </div>
                         </div>
-                        <div class="col-4 pr-0">
+                        <div class="col-5 pr-0">
                           <div class="card mb-3 w-40 text-left ml-auto">
                             <div class="card-body ">
                               <h5 class="card-title"><%= bike.price %>€ / day</h5>
@@ -87,10 +87,10 @@
                               </form> -->
                               <%= simple_form_for [ bike, @reservation] do |f| %>
                                 <%= f.label :start_date %>
-                                <%= f.datetime_field :start_date %>
+                                <%= f.datetime_field :start_date, class: "datefield" %>
                                 <%= f.label :end_date %>
-                                <%= f.datetime_field :end_date %>
-                                <%= f.submit "Book me now", class: "btn btn-primary"%>
+                                <%= f.datetime_field :end_date, class: "datefield" %>
+                                <%= f.submit "Book me now", class: "btn btn-primary mt-2"%>
                               <% end %>
                             </div>
                           </div>
