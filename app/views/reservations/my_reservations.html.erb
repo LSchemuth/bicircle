@@ -1,10 +1,29 @@
-<div class="container">
-  <% @reservations.each do |reservation| %>
-    <h2><%= reservation.start_date %></h2>
-    <h2><%= reservation.end_date %></h2>
-    <p><%= reservation.user.email %></p>
-    <p><%= reservation.bike.title %></p>
-    <p><%= reservation.bike.address %></p>
-  <% end %>
-  <%= link_to "Back to see all bikes", bikes_path %>
+<div class="container container-reservations-page">
+  <div class="row">
+      <div class="col-5 form-wrapper">
+         <h1>Your Bookings</h1>
+          <% @reservations.each do |reservation| %>
+            <div class="cards-reservations">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><strong><%= reservation.bike.title %></strong></h5>
+                  <p class="card-text" style="font-size: 12px">Address: <%= reservation.bike.address %></p>
+                  <br>
+                  <h6 class="card-subtitle mb-2 text-muted">From: <%= reservation.start_date %></h6>
+                  <h6 class="card-subtitle mb-2 text-muted">Until: <%= reservation.end_date %></h6>
+          
+                </div>
+              </div>
+            
+            </div>
+          <% end %>
+      </div>
+      <div class="col-7 reservations-img">
+        <img src="https://images.pexels.com/photos/1548771/pexels-photo-1548771.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" class="img-new" alt="">
+      </div>
+    </div>
+   <%= link_to "Back to see all bikes", bikes_path %>
 </div>
+
+
+
