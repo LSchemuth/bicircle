@@ -3,8 +3,9 @@
 #
 require "open-uri"
 
-Bike.destroy_all
 Reservation.destroy_all
+Bike.destroy_all
+
 
 user = User.all.first
 
